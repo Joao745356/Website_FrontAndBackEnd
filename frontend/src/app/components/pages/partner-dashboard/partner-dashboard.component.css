@@ -1,0 +1,113 @@
+
+#container{
+    display: flex;
+    background-color: rgb(52, 64, 68);
+    height: 100vh;
+}
+
+
+/* Styling for the menu section */
+#menu {
+    border-radius: 15px;
+    padding-bottom: 2% ;
+    display:flow-root;
+    background: #51707c; /* Light blue background */
+    width: 25%; /* Width of 300 pixels */
+    height: 65%; /* Full height */
+    margin-left: 7%; /* Move 100 pixels to the right */
+    margin-top: 8%;
+    padding: 2rem;
+}
+
+
+
+/* Styling for the logo container */
+#menu #logo {
+    display: flex; /* Flex display */
+    align-items: center; /* Center align items vertically */
+    color: #A9CC93; /* Text color */
+    padding: 20px 15px 20px; /* Padding */
+}
+
+/* Styling for the menu items */
+#menu .items {
+    margin-top: 40px; /* Top margin for menu items */
+}
+
+/* Styling for the menu item list */
+#menu .items li {
+    list-style: none; /* Remove default list style */
+    padding: 10% 0; /* Padding for each menu item */
+    transition: 0.3s ease;
+}
+
+
+#menu .items li:hover {
+    background: rgba(137, 231, 195, 0.725);
+    cursor: pointer;
+} 
+
+
+#menu .items li:hover i, 
+#menu .items li:hover a {
+color:#FFF;
+} 
+
+/* Styling for the icon inside menu items */
+#menu .items li i {
+    color: rgb(27, 27, 27); /* Icon color */
+    width: 8%; /* Width of the icon */
+    height: 10%; /* Height of the icon */
+    line-height: 30%; /* Line height */
+    text-align: center; /* Center align text */
+    font-size: 14px; /* Font size */
+    margin : 0 2% 0 5%; /* Margin around the icon */
+}
+
+
+
+/* Targets the anchor element inside the list element*/
+#menu .items li  a { 
+    text-decoration: none; /* anchors stop being under  lined*/
+    color: black;/* color of the letter*/
+    font-weight: 300px;/* weight of the letters*/
+    transition: 0.3s ease;
+}
+
+
+.interface-name {
+    margin-top: 25%;
+    padding-top: 18%;
+    padding-left: 10%;
+    color:#A9CC93;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+
+
+.values {
+    margin-top: 10%;
+    margin-bottom: 100%;
+    display:inline-flexbox;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.values span {
+    font-size: 14px;
+}
+.values .val-box {
+    background: #51707c;
+    width: 15rem;
+    height: 6rem;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin: 0 30px; /* Add margin to create space between val-box elements */
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+  }

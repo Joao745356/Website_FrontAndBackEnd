@@ -1,0 +1,94 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style_employeePage.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/donations.css">
+</head>
+
+
+
+<%- include('../../layouts/partials/Staff/StaffMenu.ejs') %>
+
+
+  <section id=" interface ">
+
+    <h3 class="interface-name">Register Donation</h3>
+    <div class="overall-container">
+      <div class="donation-form">
+        <form action="/staff/registerDonation" method="post" enctype="multipart/form-data">
+
+          <div class="selection">
+            <label>Donor</label>
+            <select name="donor">
+              <% donors.forEach(donor=> { %>
+                <% if (donor.id===donation.donor) { %>
+                  <option selected label="<%= donor.email %>" value="<%= donor.id %>">
+                    <% } else { %>
+                  <option label="<%= donor.name %>" value="<%= donor.id %>">
+                    <% } %>
+                      <% }) %>
+            </select>
+          </div>
+
+          <div class="selection">
+            <label>Institution</label>
+            <select name="institution">
+              <% partners.forEach(institution=> { %>
+                <% if (institution.id===donation.institution) { %>
+                  <option selected label="<%= institution.name %>" value="<%= institution.id %>">
+                    <% } else { %>
+                  <option label="<%= institution.name %>" value="<%= institution.id %>">
+                    <% } %>
+                      <% }) %>
+            </select>
+          </div>
+
+
+          <div class="selection">
+            <label>Location</label>
+            <select name="location">
+              <% collectionPoints.forEach(item=> { %>
+                <% if (item.id===donation.location) { %>
+                  <option selected label="<%= item.name %>" value="<%= item.id %>">
+                    <% } else { %>
+                  <option label="<%= item.name %>" value="<%= item.id %>">
+                    <% } %>
+                      <% }) %>
+            </select>
+          </div>
+
+
+          <div class="selection">
+            <label for="selection">Quality</label>
+            <select name="quality">
+              <option value="Excellent">Excellent</option>
+              <option value="Good">Good</option>
+              <option value="Fair">Fair</option>
+              <option value="Poor">Poor</option>
+            </select>
+
+
+            <div class="input">
+              <label for="quantity">Quantity (in KGs)</label>
+              <input type="number" name="quantity" id="quantity" required min="1" max="100">
+            </div>
+
+            <div class="input">
+              <label for="date">Donation Date</label>
+              <input type="date" name="date" id="date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="image">Append Images (optional) </label>
+              <input type="file" name="image">
+            </div>
+
+          </div>
+
+          <button type="submit">Register</button>
+        </form>
+      </div>
+
+
+    </div>
+
+
+  </section>

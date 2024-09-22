@@ -1,0 +1,50 @@
+body{
+    padding-top: 40px;
+}
+
+.partner-container {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    max-width: 100%;
+    max-height: 100% ;
+    display:grid;
+    flex-wrap: wrap;
+    background-color: rgb(52, 64, 68);
+  }
+  
+  .partner-card {
+    padding: 1rem;
+    background-color:#506f7b;
+    display: flex;
+    color: #A9CC93;
+    width: 95%; /* Set the width of each partner card */
+    height: 10rem;
+    margin: 20px; /* Add some margin for spacing */
+    border: none; /* Example border */
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .partner-image {
+    width: 20%; /* Make the image fill the width of the partner card */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px 10px 0 0; /* Rounded corners only at the top */
+  }
+  
+  .partner-info {
+    padding: 20px;
+  }
+  
+  .partner-name {
+    font-weight: bold;
+  }
+  
+  .partner-description {
+    margin-top: 10px;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+  }

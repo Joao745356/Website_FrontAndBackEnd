@@ -1,0 +1,38 @@
+<head>
+    <link rel="stylesheet"  type="text/css"  href="/stylesheets/AdminPageStyle.css">
+</head>
+
+<%-include('../layouts/partials/Admin/AdminMenu.ejs')%>
+
+<nav>
+    <section id = " interface ">
+
+        <h3 class="interface-name">Homepage</h3>
+
+        <div class="values">
+            <div class="val-box">
+                <i class="fa-solid fa-user" ></i>
+                <div>
+                    <h3> <%= numberOfDonators %></h3> <!-- -->
+                    <span>Total Donators</span>
+                </div>
+            </div>    
+
+            <div class="val-box">
+                <i class="fa-solid fa-user" ></i>
+                <div>
+                    <h3> <%= totalDonations %></h3> <!-- -->
+                    <span>Total Donations</span>
+                </div>
+            </div>    
+
+            <div class="val-box">
+                <i class="fa-solid fa-user" ></i>
+                <div>
+                    <h3> <%= totalCollectionPoints %></h3> <!-- -->
+                    <span>Total Collection Points</span>
+                </div>
+            </div>    
+ 
+        </div>
+</nav>

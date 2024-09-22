@@ -1,0 +1,27 @@
+<head>
+    
+    <link  type="text/css" rel="stylesheet"   href="/stylesheets/style_employeePage.css">
+  </head>
+  
+<section id="menu">
+        
+    <div id="logo">
+       <h2><a href="/staff"> Hello <%= user %> !</a></h2> <!--This is to be the username-->
+    </div>
+
+    <div class="items">
+        <ul>
+        <li>    <i class="fa-solid fa-user"></i>   <div class="dropdown">
+            <button class="dropbtn">Manage Donations</button>
+            <div class="dropdown-content">
+                <a href="/staff/registerDonation">Report a Donation</a>
+                <a href="/staff/viewDonations">Donation History </a>
+                <a href="/staff/registerDonators">Register Donator </a>
+                <a href="/staff/donationRequests">View Donation Requests</a>
+            </div>
+        </div>
+    </li>
+        </ul>
+    </div>
+
+</section>

@@ -1,0 +1,53 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/manageClientAccounts.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/AdminPageStyle.css">
+</head>
+
+<%- include('../../layouts/partials/Staff/StaffMenu.ejs') %>
+
+    <div id="interface">
+
+        <div class="manage-staff-interface">
+            <h3 class="interface-name" style="margin-bottom: 8px;">Donation Requests</h3>
+        </div>
+
+        <div class="scrollable-table">
+            <% if (requests.length > 0) { %>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Donor</th>
+                            <th>Date</th>
+                            <th>State</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% requests.forEach(item => { %>
+                            <tr>
+                                <td>
+                                    <%= item.donor.email %>
+                                </td>
+                                <td>
+                                    <%= item.dateToCollect %>
+                                </td>
+                                <td>
+                                    <%= item.state %>
+                                </td>
+                                <td>
+                                    <a href="/staff/donationRequests/<%= item.id %>"><button>View Information</button></a>
+                                    <form action="/staff/donationRequests/<%= item.id %>?_method=DELETE" method="POST">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <p>No data available</p>
+            <% } %>
+
+        </div>
+
+    </div>

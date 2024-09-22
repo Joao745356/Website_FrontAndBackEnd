@@ -1,0 +1,44 @@
+
+  
+  body {
+    background-color: rgb(52, 64, 68);
+  }
+  
+  .white-box {
+    height: 80vh;
+    display: flex;
+    justify-content: left; /* Align items to the start horizontally */
+    align-items: center; /* Center items vertically */
+    border-radius: 20px; /* Set the border radius for rounded corners */
+  }
+  
+  
+  .purpose-statement {
+    display:flow-root;
+    width: 80rem;                                                                    /* Adjusts the width of element */
+    height: 18rem;                                                                  /* Adjust the height of the element */
+    border-radius: 10px;                                                            /* Adjust the value to change the roundness */
+    background-color: #344850;                                                     
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.315);                                      /*Adds shadow for depth */
+    padding: 20px;                                                                  /* Optional: Add padding inside the box */
+    margin-left: 50px;                                                              /* Move the image 90px to the right */ 
+  }
+  
+  .purpose-statement h2 {
+    display: inline-block;
+    font-size: 240%;
+    color: #A9CC93;
+    margin-bottom: 50px; /* Add vertical space between h2 and p */
+  }
+  
+  .purpose-statement p {
+    font-size: 100%;
+    color: #A9CC93;
+  }
+  
+  
+  
+
+  
+  
+  

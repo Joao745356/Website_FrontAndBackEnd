@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="form-wrapper">
+    <h2>Register as Partner</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="partner-name">Name:</label>
+        <input 
+          type="text" 
+          id="donor-name" 
+          [(ngModel)]="name" 
+          name="name" 
+          required 
+          #nameModel="ngModel" 
+          placeholder="Name"
+          minlength="2"
+          maxlength="50">
+        <div *ngIf="nameModel.touched && nameModel?.errors?.required" class="error-message">
+          This field is mandatory.
+        </div>
+        <div *ngIf="nameModel.touched && nameModel?.errors?.minlength" class="error-message">
+          Name has to be at least 2 characters in length.
+        </div>
+        <div *ngIf="nameModel.touched && nameModel?.errors?.maxlength" class="error-message">
+          Name has to be a maximum of 50 characters in length
+        </div>
+      </div>
+      <div>
+        <label for="partner-email">Email:</label>
+        <input 
+          type="email" 
+          id="donor-email" 
+          [(ngModel)]="email" 
+          name="email" 
+          required 
+          #emailModel="ngModel" 
+          placeholder="Email"
+          pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
+        <div *ngIf="emailModel.touched && emailModel?.errors?.required" class="error-message">
+          This field is mandatory.
+        </div>
+        <div *ngIf="emailModel.touched && emailModel?.errors?.pattern" class="error-message">
+          Please enter a valid email.
+        </div>
+      </div>
+      <div>
+        <label for="partner-password">Password:</label>
+        <input 
+          type="password" 
+          id="donor-password" 
+          [(ngModel)]="password" 
+          name="password" 
+          required 
+          #passwordModel="ngModel" 
+          placeholder="Password"
+          minlength="10">
+        <div *ngIf="passwordModel.touched && passwordModel?.errors?.required" class="error-message">
+          This field is mandatory.
+        </div>
+        <div *ngIf="passwordModel?.errors?.minlength" class="error-message">
+          Pasword must have at least 10 characters.
+        </div>
+      </div>
+      <div>
+        <label for="partner-description">Description:</label>
+        <textarea id="partner-description" [(ngModel)]="description" name="description" required #descriptionModel="ngModel" minlength="25"></textarea>
+        <div *ngIf="descriptionModel.touched && descriptionModel?.errors?.required" class="error-message">
+          This field is mandatory.
+        </div>
+        <div *ngIf="descriptionModel.touched && descriptionModel?.errors?.minlength" class="error-message">
+          Description needs to be at least 25 characters.
+        </div>
+      </div>
+      <div>
+        <label for="file">Image about your company:</label>
+        <input type="file" #imageInput (change)="onFileSelected($event)" name="image" required accept=".jpg,.jpeg,.png">
+        <div *ngIf="!imageInput.files || imageInput.files.length === 0" class="error-message">
+          Please select an image.
+        </div>
+      </div>
+      <button type="submit">Register as Partner</button>
+    </form>
+  </div>
+</div>

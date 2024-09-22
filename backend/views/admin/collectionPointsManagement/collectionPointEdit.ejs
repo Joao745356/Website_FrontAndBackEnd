@@ -1,0 +1,24 @@
+
+<head>
+    <link rel="stylesheet"  type="text/css"  href="/stylesheets/AdminPageStyle.css">
+    <link rel="stylesheet"  type="text/css"  href="/stylesheets/EditAccount.css">
+  </head>
+
+  <%-include('../../layouts/partials/Admin/AdminMenu.ejs')%>
+  
+  <section id = " interface ">
+  
+    <h3 class="interface-name">Edit <%= collectionPoint.name  %></h3>
+  
+    <div class="form">
+        <form class="form" action="/admin/manage-collectionPoints/edit/<%= collectionPoint.id %>?_method=PUT" method="post">
+    <div class="form-group">
+        <label for="name">New Name:</label>
+        <input type="text" id="name" name="name" placeholder="<%= collectionPoint.name %>">
+    </div>
+        <button class="submit-edit" type="submit">Submit</button>
+  </form>
+    </div>
+       
+  
+  </section>

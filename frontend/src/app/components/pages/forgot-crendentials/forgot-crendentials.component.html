@@ -1,0 +1,9 @@
+
+<form [formGroup]="forgotForm" (ngSubmit)="onSubmit()">
+    <span class="b">Pretty please give us your email so we can send you a reset password email </span>
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" required>
+    <div *ngIf="forgotForm.controls.email.errors?.required">Email is required.</div>
+    <div *ngIf="forgotForm.controls.email.errors?.email">Invalid email format.</div>
+    <button type="submit">Submit</button>
+  </form>

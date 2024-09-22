@@ -1,0 +1,48 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style_employeePage.css">
+    <link rel="stylesheet"  type="text/css"  href="/stylesheets/requestPage.css">
+</head>
+
+<%- include('../../layouts/partials/Staff/StaffMenu.ejs') %>
+
+<div class="container">
+  <h3 class="interface-name">Donation Request Details</h3>
+  <div class="form-group">
+    <label for="name">Donor:</label>
+    <p id="name"><%= request.donor.email %></p>
+  </div>
+  <div class="form-group">
+    <label for="email">Institution:</label>
+    <p id="email"><%= request.institution.name %></p>
+  </div>
+  <div class="form-group">
+    <label for="description">Location:</label>
+    <p id="description"><%= request.location.name %></p>
+  </div>
+  <div class="form-group">
+    <label for="description">Quantity:</label>
+    <p id="description"><%= request.quantity %></p>
+  </div>
+  <div class="form-group">
+    <label for="description">Quality:</label>
+    <p id="description"><%= request.quality %></p>
+  </div>
+
+
+  <form action="/staff/acceptRequest/<%= request._id %>" method="post">
+    
+    <div class="form-group">
+      <label for="image">Donation photo evidence: </label>
+      <input type="file" name="image">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Date Collected:</label>
+      <div class="input">
+        <input type="date" name="date" id="date" required>
+      </div>
+    </div>
+
+    <button type="submit" class="btn-submit">Accept Request</button>
+  </form>
+</div>

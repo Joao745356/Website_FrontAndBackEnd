@@ -1,0 +1,56 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/manageClientAccounts.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/AdminPageStyle.css">
+</head>
+
+<%-include('../layouts/partials/Admin/AdminMenu.ejs')%> 
+
+    <div id="interface">
+
+        <div class="manage-staff-interface">
+            <h3 class="interface-name" style="margin-bottom: 8px;">Manage Staff</h3>
+            <a href="/admin/manage-accounts/register/registerStaff"  >Register Staff</a>
+            <form action="/admin/manage-accounts/view/staff-members" method="get">
+                <label for="email" >Search Staff</label>
+                <input type="text" name="email" placeholder="Staff email..." value="<%= searchOption.email  %>">
+                <button id="buttonManageStaff" type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="scrollable-table">
+            <table class="table">
+                <% if (staff.length > 0) { %>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% staff.forEach(item=> { %>
+                        <tr>
+                            <td>
+                                <%= item.name %>
+                            </td>
+                            <td>
+                                <%= item.email %>
+                            </td>
+                            <td>
+                                <a
+                                    href="/admin/manage-accounts/edit/staff/<%= item.id %>"><button>Edit</button></a>
+                                <form action="/admin/manage-accounts/delete/staff/<%= item.id %>?_method=DELETE"
+                                    method="POST">
+                                    <button type="submit">Delete</button>
+                                </form>
+                                <% }) %>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <% } else { %>
+                <p>No data available</p>
+            <% } %>
+        </div>
+
+    </div>

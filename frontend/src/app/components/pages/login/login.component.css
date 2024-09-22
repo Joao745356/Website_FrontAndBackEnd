@@ -1,0 +1,110 @@
+/* Add this CSS to your login.component.css */
+
+/* This ensures the container takes full height and centers its content */
+
+*{
+    color: rgb(52, 64, 68);
+}
+html, body {
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(52, 64, 68);
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .wrapper {
+    max-width: 400px;
+    width: 100%; /* Ensures it is responsive */
+    padding: 2.5rem;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #5c808e;
+    margin: 15%;
+  }
+  
+  h1 {
+    text-align: center;
+    padding-bottom: 1.5rem;
+    color: #A9CC93;
+    font-weight: 350;
+  }
+  
+  .input-box {
+    position: relative;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+  .input-box input {
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid #ccc;
+    border-radius: 5rem;
+  }
+  
+  .input-box i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    color: #888;
+  }
+  
+  .button {
+    margin-left: 35px;
+    width: 80%;
+    height: 45px;
+    background: #c7e4cb;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgb(107, 92, 92);
+    cursor: pointer;
+    font-size: 16px;
+    color:#333;
+    font-weight: 600px;
+  }
+
+  .button:hover{
+    opacity: 1;
+  }
+  
+  .remember-forgot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .register-link {
+    text-align: center;
+  }
+  
+  .register-link a {
+    color: #A9CC93;
+    text-decoration: none;
+  }
+  
+  .register-link p{
+    color: #A9CC93;
+  }
+  .register-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* styles.css or login.component.css */
+.error-message {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+}

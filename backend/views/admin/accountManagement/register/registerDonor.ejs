@@ -1,0 +1,33 @@
+
+<head>
+    <link rel="stylesheet"  type="text/css"  href="/stylesheets/AdminPageStyle.css">
+    <link rel="stylesheet"  type="text/css"  href="/stylesheets/EditAccount.css">
+  </head>
+  
+  <%-include('../../../layouts/partials/Admin/AdminMenu.ejs')%>
+
+  <section id = " interface ">
+  
+    <h3 class="interface-name">Register New Donor</h3>
+  
+    <div class="form">
+        <form class="form" action="/admin/manage-accounts/register/registerDonor" method="post">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+    </div>
+    <p><%- include('../../../layouts/partials/errorMessage.ejs') %></p>
+        <button type="submit">Submit</button>
+  </form>
+    </div>
+       
+  
+  </section>

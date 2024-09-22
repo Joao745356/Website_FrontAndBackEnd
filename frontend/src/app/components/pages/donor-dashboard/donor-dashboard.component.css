@@ -1,0 +1,163 @@
+#container {
+    display: flex;
+    background-color: rgb(52, 64, 68);
+    height: 100vh;
+  }
+  
+  #menu {
+    border-radius: 15px;
+    padding-bottom: 2%;
+    display: flex;
+    flex-direction: column;
+    background: #51707c;
+    width: 25%;
+    height: 65%;
+    margin-left: 7%;
+    margin-top: 8%;
+  }
+  
+  #menu #logo a {
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    transition: 0.3s ease;
+  }
+  
+  #menu #logo img {
+    width: 60px;
+    margin-right: 15px;
+  }
+  
+  #menu #logo {
+    display: flex;
+    align-items: center;
+    color: #A9CC93;
+    padding: 20px 15px 20px;
+  }
+  
+  #menu .items {
+    margin-top: 40px;
+  }
+  
+  #menu .items li {
+    list-style: none;
+    padding: 10% 0;
+    transition: 0.3s ease;
+  }
+  
+  #menu .items li:hover {
+    background: rgba(137, 231, 195, 0.725);
+    cursor: pointer;
+  }
+  
+  #menu .items li:hover i,
+  #menu .items li:hover a {
+    color: #FFF;
+  }
+  
+  #menu .items li i {
+    color: rgb(27, 27, 27);
+    width: 8%;
+    height: 10%;
+    line-height: 30%;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 2% 0 5%;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bolder;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(137, 231, 195, 1);
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12% 16%;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #5961c2;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  #menu .items li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 300px;
+    transition: 0.3s ease;
+  }
+  
+  .interface-name {
+    margin-top: 30%;
+    padding-top: 18%;
+    padding-left: 10%;
+    color: #A9CC93;
+    font-size: 24px;
+    font-weight: bolder;
+  }
+  
+  .values {
+    margin-top: 10%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .values span {
+    font-size: 14px;
+  }
+  
+  .values .val-box {
+    background: #51707c;
+    width: 15rem;
+    height: 6rem;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin: 0 30px;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .paypal-text {
+    margin-left: 2rem;
+    font-size: 14px;
+    color: #A9CC93;
+    margin-bottom: 10px; /* Space between the text and the PayPal button */
+  }
+  
+  .paypal-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Adjust this value to change the space between the val-box and the PayPal button */
+  }
+  

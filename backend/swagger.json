@@ -1,0 +1,1071 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Recicla Têxtil",
+    "description": "User and donation management operations"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/users/donors": {
+      "get": {
+        "tags": [
+          "Donors"
+        ],
+        "summary": "Get all donors in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DonorObject"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Donors"
+        ],
+        "description": "Create a new donor",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Donor we want to create",
+            "schema": {
+              "$ref": "#/definitions/UserInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "New Donor Added",
+            "schema": {
+              "$ref": "#/definitions/DonorObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/users/donors/:id": {
+      "put": {
+        "tags": [
+          "Donors"
+        ],
+        "summary": "Update a donor's name and email",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the donor to update",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "New name and email for the donor",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserUpdateInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Donor Updated",
+            "schema": {
+              "$ref": "#/definitions/DonorObject"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Donors"
+        ],
+        "summary": "Get a specific donor by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the donor to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DonorObject"
+            }
+          },
+          "404": {
+            "description": "Donor not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Donors"
+        ],
+        "summary": "Delete a Donor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the donor to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Donor Deleted",
+            "schema": {
+              "$ref": "#/definitions/DonorObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/users/staff": {
+      "get": {
+        "tags": [
+          "Staff"
+        ],
+        "summary": "Get all staff in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/StaffObject"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Staff"
+        ],
+        "description": "Create a new staff member",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Staff we want to create",
+            "schema": {
+              "$ref": "#/definitions/UserInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "New Staff Added",
+            "schema": {
+              "$ref": "#/definitions/StaffObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/users/staff/:id": {
+      "put": {
+        "tags": [
+          "Staff"
+        ],
+        "summary": "Update a staff's name and email",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the staff to update",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "New name and email for the staff",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserUpdateInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Staff Updated",
+            "schema": {
+              "$ref": "#/definitions/StaffObject"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Staff"
+        ],
+        "summary": "Get a specific staff by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the staff to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/StaffObject"
+            }
+          },
+          "404": {
+            "description": "Staff not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Staff"
+        ],
+        "summary": "Delete a staff member",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the staff to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Staff Deleted",
+            "schema": {
+              "$ref": "#/definitions/StaffObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/users/admin": {
+      "get": {
+        "tags": [
+          "Administrators"
+        ],
+        "summary": "Get all administrators in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AdminObject"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Administrators"
+        ],
+        "description": "Create a new administrator",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Admin we want to create",
+            "schema": {
+              "$ref": "#/definitions/UserInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "New Staff Added",
+            "schema": {
+              "$ref": "#/definitions/AdminObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/users/admin/:id": {
+      "put": {
+        "tags": [
+          "Administrators"
+        ],
+        "summary": "Update an admin's name and email",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the admin to update",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "New name and email for the admin",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserUpdateInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Admin Updated",
+            "schema": {
+              "$ref": "#/definitions/AdminObject"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Administrators"
+        ],
+        "summary": "Get a specific partner by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the admin to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AdminObject"
+            }
+          },
+          "404": {
+            "description": "Admin not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Administrators"
+        ],
+        "summary": "Delete an admin",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the admin to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Admin Deleted",
+            "schema": {
+              "$ref": "#/definitions/AdminObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/users/partners": {
+      "get": {
+        "tags": [
+          "Partners"
+        ],
+        "summary": "Get all partners in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PartnerObject"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Partners"
+        ],
+        "description": "Create a request to Create a new partner",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Partner we want to create",
+            "schema": {
+              "$ref": "#/definitions/PartnerInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "New Partner Added",
+            "schema": {
+              "$ref": "#/definitions/PartnerObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/users/partners/:id": {
+      "put": {
+        "tags": [
+          "Partners"
+        ],
+        "summary": "Update a partner's name and email",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the partner to update",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "New name, email and description for the partner",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PartnerUpdateInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Partner Updated",
+            "schema": {
+              "$ref": "#/definitions/PartnerObject"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Partners"
+        ],
+        "summary": "Get a specific partner by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the partner to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/PartnerObject"
+            }
+          },
+          "404": {
+            "description": "Partner not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Partners"
+        ],
+        "summary": "Delete a partner",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the partner to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Partner Deleted",
+            "schema": {
+              "$ref": "#/definitions/PartnerObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/donations": {
+      "get": {
+        "tags": [
+          "Donations"
+        ],
+        "summary": "Get all donations in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DonationObject"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Donations"
+        ],
+        "description": "Create a new donation",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "donation we want to create",
+            "schema": {
+              "$ref": "#/definitions/DonationInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "New Donation Added",
+            "schema": {
+              "$ref": "#/definitions/DonationObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/donations/:id": {
+      "get": {
+        "tags": [
+          "Donations"
+        ],
+        "summary": "Get a specific donation by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the donation to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DonationObject"
+            }
+          },
+          "404": {
+            "description": "Donation not found"
+          }
+        }
+      }
+    },
+    "/api/rewards/coupons":{
+      "get": {
+        "tags": [
+          "Coupons"
+        ],
+        "summary": "Get all coupons in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CouponObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/rewards/coupons/:donorId/:couponId":{
+      "post":{
+        "tags":[
+          "Coupons"
+        ],
+        "summary": "Exchange points for a coupon",
+        "parameters": [
+          {
+            "name": "donorId",
+            "in": "path",
+            "description": "ID of the donor logged in",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "couponId",
+            "in": "path",
+            "description": "ID of coupon to purchase",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses":{
+          "200":{
+            "description": "OK"
+          },
+          "404":{
+            "description": "Donor not found"
+          },
+          "400":{
+            "description": "Donor and/or coupon required"
+          },
+
+          "402":{
+            "description":"Not enough points"
+          },
+          "500":{
+            "description":"Internal server error"
+          }
+
+          
+        }
+
+      }
+    },
+      "/api/auth/login": {
+        "post": {
+          "tags": [
+            "Authentication and Authorization"
+          ],
+          "summary": "Get authenticated within the system",
+          "requestBody": {
+            "description": "Credentials for logging in",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string",
+                      "example": "user@example.com"
+                    },
+                    "password": {
+                      "type": "string",
+                      "example": "user_password"
+                    }
+                  },
+                  "required": ["email", "password"]
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "User authenticated successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "auth": {
+                        "type": "boolean",
+                        "example": true
+                      },
+                      "token": {
+                        "type": "string",
+                        "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "User not found, or password incorrect.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "error": {
+                        "type": "string",
+                        "example": "User not found"
+                      },
+                      "auth": {
+                        "type": "boolean",
+                        "example": false
+                      },
+                      "token": {
+                        "type": "null",
+                        "example": null
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    
+"definitions": {
+  "UserInput": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "name",
+      "email",
+      "password"
+    ]
+  },
+  "UserUpdateInput": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "name",
+      "email"
+    ]
+  },
+  "CouponObject":{
+    "type": "object",
+    "properties":{
+      "sponsor":{
+        "type":"string"
+      },
+      "value":{
+        "type":"Number"
+      },
+      "cost":{
+        "type":"Number"
+      }
+    }
+  },
+  "DonorObject": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      },
+      "pointsEarned": {
+        "type": "number",
+        "default": 0
+      },
+      "role": {
+        "type": "string",
+        "default": "donor"
+      },
+      "coupons": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "uuid"
+        }
+      }
+    },
+    "required": [
+      "name",
+      "email",
+      "password",
+      "role"
+    ]
+  },
+  "StaffObject": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      },
+      "role": {
+        "type": "string",
+        "default": "staff"
+      }
+    },
+    "required": [
+      "name",
+      "email",
+      "password",
+      "role"
+    ]
+  },
+  "AdminObject": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      },
+      "role": {
+        "type": "string",
+        "default": "admin"
+      }
+    },
+    "required": [
+      "name",
+      "email",
+      "password",
+      "role"
+    ]
+  },
+  "PartnerInput": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Name of the partner",
+        "example": "Partner Name"
+      },
+      "email": {
+        "type": "string",
+        "description": "Email of the partner",
+        "example": "partner@example.com"
+      },
+      "description": {
+        "type": "string",
+        "description": "Description of the partner",
+        "example": "Description of the partner"
+      },
+      "image": {
+        "type": "string",
+        "format": "binary",
+        "description": "Image file of the partner",
+        "example": "partner_image.jpg"
+      }
+    },
+    "required": [
+      "name",
+      "email",
+      "description",
+      "image"
+    ]
+  },
+  "PartnerUpdateInput": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Name of the partner",
+        "example": "Partner Name"
+      },
+      "email": {
+        "type": "string",
+        "description": "Email of the partner",
+        "example": "partner@example.com"
+      },
+      "description": {
+        "type": "string",
+        "description": "Description of the partner",
+        "example": "Description of the partner"
+      },
+      "required": [
+        "name",
+        "email",
+        "description"
+      ]
+    }
+  },
+  "PartnerObject": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Name of the partner"
+      },
+      "email": {
+        "type": "string",
+        "description": "Email of the partner"
+      },
+      "description": {
+        "type": "string",
+        "description": "Description of the partner"
+      },
+      "dateOfRegistry": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Date of registration of the partner"
+      },
+      "numberOfDonations": {
+        "type": "integer",
+        "description": "Number of donations made to the partner"
+      },
+      "imageName": {
+        "type": "string",
+        "description": "Name of the partner's image file"
+      },
+      "imagePath": {
+        "type": "string",
+        "description": "Path to the partner's image file"
+      }
+    }
+  },
+  "DonationInput": {
+    "type": "object",
+    "properties": {
+      "donor": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "institution": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "location": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "quantity": {
+        "type": "number"
+      },
+      "quality": {
+        "type": "string",
+        "enum": [
+          "Excellent",
+          "Good",
+          "Fair",
+          "Poor"
+        ]
+      },
+      "date": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "imageName": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "donor",
+      "institution",
+      "location",
+      "quantity",
+      "quality",
+      "date"
+    ]
+  },
+  "DonationObject": {
+    "type": "object",
+    "properties": {
+      "_id": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "donor": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "institution": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "location": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "quantity": {
+        "type": "number"
+      },
+      "quality": {
+        "type": "string",
+        "enum": [
+          "Excellent",
+          "Good",
+          "Fair",
+          "Poor"
+        ]
+      },
+      "pointsAwarded": {
+        "type": "number"
+      },
+      "date": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "imageName": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "_id",
+      "donor",
+      "institution",
+      "location",
+      "quantity",
+      "quality",
+      "pointsAwarded",
+      "date",
+      "imageName"
+    ]
+  }
+}
+}

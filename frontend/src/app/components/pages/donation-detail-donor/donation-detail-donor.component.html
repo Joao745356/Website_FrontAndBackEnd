@@ -1,0 +1,19 @@
+<div class="cointainer">
+  <div class="don" *ngIf="donation">
+    <h1>Donation Details</h1>
+    <p><strong>Institution:</strong> {{ donation.institution.name }}</p>
+    <p><strong>Location:</strong> {{ donation.location.name }}</p>
+    <p><strong>Quantity:</strong> {{ donation.quantity }}</p>
+    <p><strong>Quality:</strong> {{ donation.quality }}</p>
+    <p><strong>Points Awarded:</strong> {{ donation.pointsAwarded }}</p>
+    <p><strong>Date:</strong> {{ donation.date | date : "fullDate" }}</p>
+    <p><strong>State:</strong> {{ donation.state }}</p>
+  </div>
+
+  <ng-template #loadingOrError>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="!errorMessage">Loading...</div>
+  </ng-template>
+</div>

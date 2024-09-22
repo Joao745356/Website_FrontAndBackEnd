@@ -1,0 +1,33 @@
+<head>
+    <link rel="stylesheet"  type="text/css"  href="/stylesheets/AdminPageStyle.css">
+    <link rel="stylesheet"  type="text/css"  href="/stylesheets/requestPage.css">
+  </head>
+  
+  <%-include('../../../layouts/partials/Admin/AdminMenu.ejs')%>
+
+  <div class="container">
+    <h3 class="interface-name">Partner Request Details</h3>
+    <div class="form-group">
+      <label for="name">Institution Name:</label>
+      <p id="name"><%= request.name %></p>
+    </div>
+    <div class="form-group">
+      <label for="email">Institution Email:</label>
+      <p id="email"><%= request.email %></p>
+    </div>
+    <div class="form-group">
+      <label for="description">Institution Description:</label>
+      <p id="description"><%= request.description %></p>
+    </div>
+    <% if (request && request.imageName) { %>
+    <div class="form-group">
+      <label>Image:</label>
+      <img src="/uploads/partners/<%= request.imageName %>" alt="Institution Image">
+    </div>
+    <% } %>
+    <form action="/admin/manage-accounts/register/acceptRequests/<%= request._id %>" method="post">
+      <p><%- include('../../../layouts/partials/errorMessage.ejs') %></p>
+      <button type="submit" class="btn-submit">Accept Request</button>
+    </form>
+  </div>
+  

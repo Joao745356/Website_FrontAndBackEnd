@@ -1,0 +1,98 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color:  rgb(52, 64, 68); /* Optional: Apply background color here too */
+}
+
+.page-container {
+    height: 100vh;
+    background-color: rgb(52, 64, 68);
+    padding-top: 8%;
+    padding-bottom: 8%;
+}
+
+.text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #4f837c;
+    font-weight: 350;
+}
+
+h1.text-center {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+table {
+    margin-bottom: 6rem;
+    width: 80%;
+    margin:0%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 2px 15px rgba(64, 64, 64, .7);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+td, th {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+th {
+    background-color: #42706a;
+    color: #fafafa;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+tr {
+    width: 100%;
+    background-color: #fafafa;
+}
+
+tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+button {
+    padding: 1rem;
+    border-radius: 5rem;
+    border: none;
+    color: white;
+    background-color: #42706a;
+    opacity: 0.8;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 100%;
+}
+
+#itemTable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;  /* Ensure there's space above the container */
+}
+
+.donation-request {
+    margin-top: 10rem;
+    margin-left: 40rem;
+    padding: 10px 20px;
+    background-color: #42706a;
+    color: #fafafa;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+}
+.error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+  }

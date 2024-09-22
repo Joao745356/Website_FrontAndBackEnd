@@ -1,0 +1,54 @@
+<head>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/manageClientAccounts.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/ManagePointsPage.css">
+    </head>
+</head>
+
+<%-include("../../layouts/partials/Admin/AdminMenu.ejs")%>
+    <section id=" interface ">
+
+        <h3 class="interface-name">Edit Point Distribution</h3>
+
+        <div class="form">
+            <form class="form" action="/admin/manage-rewards/points?_method=PUT" method="post">
+                <div class="form-group">
+                    
+                    <div class="input-div">
+                        <label for="quantity"> Base Quantity (KGs) </label>
+                        <input type="number" name="quantity" id="quantity" placeholder="<%= reward.baseQuantity %>"
+                            required>
+                    </div>
+
+                    <div class="input-div">
+                        <label for="points"> Points to Award </label>
+                        <input type="number" name="points" id="points" placeholder="<%= reward.points %>" required>
+                    </div>
+
+                    <div class="input-div">
+                        <label for="poor"> Percentage of Points per Poor Quality Item (1-100)</label>
+                        <input type="number" name="poor" id="points" min="1" max="100"
+                            placeholder="<%= reward.poorPercentage %>" required>
+                    </div>
+
+                    <div class="input-div">
+                        <label for="fair"> Percentage of Points per Fair Quality Item (1-100)</label>
+                        <input type="number" name="fair" id="points" min="1" max="100"
+                            placeholder="<%= reward.fairPercentage %>" required>
+                    </div>
+
+                    <div class="input-div">
+                        <label for="good"> Percentage of Points per Good Quality Item (1-100)</label>
+                        <input type="number" name="good" id="points" min="1" max="100"
+                            placeholder="<%= reward.goodPercentage %>" required>
+                    </div>
+
+                </div>
+                <p><%- include('../../layouts/partials/errorMessage.ejs') %></p>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+
+    </section>

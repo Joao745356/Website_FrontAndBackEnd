@@ -1,0 +1,54 @@
+<div id="container">
+<section id="menu">
+    <div id="logo">
+      <h2>Hello, {{ partner.name }}!</h2>
+    </div>
+  
+    <div class="items">
+      <ul>
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <a routerLink="/partner/donation-history"> View your Donations </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+  <nav>
+    <section id=" interface ">
+      <h3 class="interface-name">Homepage</h3>
+  
+      <div class="values">
+        <div class="val-box">
+          <i class="fa-solid fa-user"></i>
+          <div>
+            <h3>{{ partner.numberOfDonations }}</h3>
+            <!-- -->
+            <span>Donations you've earned</span>
+          </div>
+        </div>
+  
+        <div class="values">
+          <div class="val-box">
+            <i class="fa-solid fa-user"></i>
+            <div>
+              <h3> {{ numberOfDonators }}</h3>
+              <!-- -->
+              <span>Donators who've chosen you </span>
+            </div>
+          </div>
+      </div>
+  </div>
+  
+    </section>
+
+      
+    <ng-template #loadingOrError>
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      <div *ngIf="!errorMessage">Loading...</div>
+    </ng-template>
+  </nav>
+</div>
+  

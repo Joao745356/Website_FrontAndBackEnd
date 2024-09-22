@@ -1,0 +1,28 @@
+
+<section id="menu">
+        
+    <div id="logo">
+       <h2><a href="/admin">Hello, <%= user %> !</a></h2> 
+    </div>
+
+    <div class="items">
+        <ul>
+        <li>    <i class="fa-solid fa-user"></i>   <div class="dropdown">
+            <button class="dropbtn">Manage Accounts</button>
+            <div class="dropdown-content">
+                <a href="/admin/manage-accounts/view/staff-members">Manage Employees</a>
+                <a href="/admin/manage-accounts/view/registered-donors">Manage Donators</a>
+                <a href="/admin/manage-accounts/view/partners">Manage Partner Institutions</a>
+                <a href="/admin/manage-accounts/view/admins">Manage Admins</a>
+                <a href="/admin/manage-accounts/register/partnershipRequests">View partnership requests</a>
+            </div>
+        </div>
+    </li>
+        <li>    <i class="fa-solid fa-seedling"></i>        <a href="/admin/manage-rewards/points"> Manage Point Attribution </a> </li>
+        <li>    <i class="fa-solid fa-ticket-simple"></i>   <a href="/admin/manage-rewards/coupons/view"> Manage Coupons </a> </li>
+        <li>    <i class="fa-solid fa-location-dot"></i>    <a href="/admin/manage-collectionPoints/"> Manage Collection points</a></li>
+        <li>    <i class="fa-solid fa-chart-pie"></i>       <a href="#"> Chart Analysis </a> </li>
+        </ul>
+    </div>
+
+</section>

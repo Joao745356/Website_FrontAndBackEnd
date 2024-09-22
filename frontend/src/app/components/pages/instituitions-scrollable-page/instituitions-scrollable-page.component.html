@@ -1,0 +1,17 @@
+<div class="partner-container">
+  <div *ngFor="let item of partnersWithImages" class="partner-card">
+    <img [src]="item.imageData" alt="{{item.partner.name}}" class="partner-image">
+    <div class="partner-info">   
+      <p class="partner-name">{{item.partner.name}}</p>
+      <p class="partner-description">{{item.partner.description}}</p>
+    </div>
+  </div>
+</div>
+
+  
+<ng-template #loadingOrError>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+  <div *ngIf="!errorMessage">Loading...</div>
+</ng-template>

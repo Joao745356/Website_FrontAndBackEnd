@@ -1,0 +1,17 @@
+
+
+<div id="homepage_header_container">
+    <div class="header">
+       <a routerLink="/" > <img class="logo" src="../../../../assets/PinClipart.com_dry-clipart_5656035.png" alt="logo" > </a> <!-- insert logo later on here. -->
+        <nav>
+            <ul class="nav_links">
+                <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
+                <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
+                <li><a routerLink="/PartnerInstituitions">Instituitions</a></li>
+                <li><a routerLink = "/collection-points">Collection points</a></li>
+                <li><a routerLink="/FAQ">FAQ</a></li>
+            </ul>
+        </nav>
+        <a class="cta" routerLink="/Contacts"><button>Contact</button></a>
+    </div>
+</div>

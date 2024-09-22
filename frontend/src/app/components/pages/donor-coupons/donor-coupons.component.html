@@ -1,0 +1,64 @@
+
+
+<div class = "pagecontainer">
+<div class="container" *ngIf="coupons">
+    <div class="content">
+        <div id="itemTable" *ngIf="coupons && coupons.length > 0">
+            <h1 class="text-center">Available Coupons</h1>
+            <table>
+                <tr>
+                    <th>Sponsor</th>
+                    <th>Cost (points)</th>
+                    <th>Value</th>
+                    <th>Actions</th>
+                </tr>
+                <tr *ngFor="let coupon of coupons">
+                    <td>{{ coupon.sponsor }}</td>
+                    <td>{{ coupon.cost }}</td>
+                    <td>{{ coupon.value | currency }}</td>
+                    <td>
+                        <button (click)="acquireCoupon(coupon._id)">Exchange</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div *ngIf="!coupons || coupons.length === 0">
+            <p class="text-center">No coupons available.</p>
+        </div>
+
+        <div class="user-info" *ngIf="user">
+            <h1 class="title">Your Information:</h1>
+            <div class="name">
+                {{ user.name }}
+            </div>
+            <div class="points">
+                Points: {{ user.pointsEarned }}
+            </div>
+            <div class = "coupon-table">
+                    <h1 class="text-center">Your Coupons</h1>
+                    <table>
+                        <tr>
+                            <th>Sponsor</th>
+                            <th>Value</th>
+                        </tr>
+                        <tr *ngFor="let coupon of donorCoupons">
+                            <td>{{ coupon.sponsor }}</td>
+                            <td>{{ coupon.value | currency }}</td>
+                        </tr>
+                    </table>
+                    <div *ngIf="!donorCoupons || donorCoupons.length === 0">
+                        <p class="text-center">No coupons available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+<ng-template #loadingOrError>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="!errorMessage">Loading...</div>
+  </ng-template>

@@ -1,0 +1,83 @@
+/* Style for the interface section */
+#interface {
+    margin-left: 220px; /* Adjust the width of your sidebar */
+    padding: 20px;
+}
+/* Style for the interface name */
+.interface-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Style for the 'Add a Coupon' link */
+.interface-name + a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #A9CC93;
+}
+
+/* Style for the search form */
+form {
+    margin-bottom: 20px;
+}
+
+/* Style for the label */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Style for the input */
+input[type="text"] {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc; /* Adjust border color as needed */
+    border-radius: 5px;
+}
+
+/* Style for the button */
+#search {
+    padding: 5px 10px;
+    background-color: #007bff; /* Adjust button color as needed */
+    color: #fff; /* Adjust text color as needed */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search:hover {
+    background-color: #0056b3; /* Adjust hover color as needed */
+}
+
+/* Style for the overall container */
+.overall-container {
+    border: 1px solid #ccc; /* Adjust border color as needed */
+    padding: .5em;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Adjust background color as needed */
+}
+
+/* Style for the coupons list */
+.coupons {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Style for the coupons list items */
+.coupons li {
+    margin-bottom: 10px;
+}
+
+/* Style for the hr within the coupons list */
+.coupons hr {
+    border: none;
+    border-top: 1px solid #ccc; /* Adjust line color as needed */
+}
+
+/* Style for the 'No Coupons' message */
+.coupons p {
+    font-style: italic;
+    color: #999; /* Adjust color as needed */
+}

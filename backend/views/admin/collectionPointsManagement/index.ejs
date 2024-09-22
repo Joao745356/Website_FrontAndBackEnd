@@ -1,0 +1,60 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/manageClientAccounts.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/AdminPageStyle.css">
+</head>
+
+<%-include('../../layouts/partials/Admin/AdminMenu.ejs')%> 
+
+    <div id="interface">
+
+        <div class="manage-staff-interface">
+            <h3 class="interface-name" style="margin-bottom: 8px;">Manage Collection Points </h3>
+            <a href="/admin/manage-collectionPoints/create"  >Create Collection Point</a>
+            <form action="/admin/manage-collectionPoints/" method="get">
+                <label for="email" >Search Collection Points</label>
+                <input type="text" name="name" placeholder="Collection Point name..." value="<%= searchOption.name  %>">
+                <button id="buttonManageStaff" type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="scrollable-table">
+            <table class="table">
+                <% if (collectionPoints.length > 0) { %>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% collectionPoints.forEach(item=> { %>
+                        <tr>
+                            <td>
+                                <%= item.name %>
+                            </td>
+                            <td>
+                                <%= item.latitude %>
+                            </td>
+                            <td>
+                                <%= item.longitude %>
+                            </td>
+                            <td>
+                                <a
+                                    href="/admin/manage-collectionPoints/edit/<%= item.id %>"><button>Edit</button></a>
+                                <form action="/admin/manage-collectionPoints/delete/<%= item.id %>?_method=DELETE"
+                                    method="POST">
+                                    <button type="submit">Delete</button>
+                                </form>
+                                <% }) %>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <% } else { %>
+                <p>No data available</p>
+            <% } %>
+        </div>
+
+    </div>

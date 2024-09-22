@@ -1,0 +1,72 @@
+<body>
+  <div class="container">
+    <div class="form-wrapper">
+      <h2>Register as Donor</h2>
+      <form (ngSubmit)="registerDonor()">
+        <div>
+          <label for="donor-name">Name:</label>
+          <input 
+            type="text" 
+            id="donor-name" 
+            [(ngModel)]="name" 
+            name="name" 
+            required 
+            #nameModel="ngModel" 
+            placeholder="Name"
+            minlength="2"
+            maxlength="30">
+          <div *ngIf="nameModel.touched && nameModel?.errors?.required" class="error-message">
+            This field is mandatory.
+          </div>
+          <div *ngIf="nameModel.touched && nameModel?.errors?.minlength" class="error-message">
+            Name has to be at least 2 characters in length.
+          </div>
+          <div *ngIf="nameModel.touched && nameModel?.errors?.maxlength" class="error-message">
+            Name has to be a maximum of 30 characters in length
+          </div>
+        </div>
+        <div>
+          <label for="donor-email">Email:</label>
+          <input 
+            type="email" 
+            id="donor-email" 
+            [(ngModel)]="email" 
+            name="email" 
+            required 
+            #emailModel="ngModel" 
+            placeholder="Email"
+            pattern="^[\w.-]+@([\w-]+\.)+[\w-]{2,4}$">
+          <div *ngIf="emailModel.touched && emailModel?.errors?.required" class="error-message">
+            This field is mandatory.
+          </div>
+          <div *ngIf="emailModel.touched && emailModel?.errors?.pattern" class="error-message">
+            Please enter a valid email.
+          </div>
+        </div>
+        <div>
+          <label for="donor-password">Password:</label>
+          <input 
+            type="password" 
+            id="donor-password" 
+            [(ngModel)]="password" 
+            name="password" 
+            required 
+            #passwordModel="ngModel" 
+            placeholder="Password"
+            minlength="10">
+          <div *ngIf="passwordModel.touched && passwordModel?.errors?.required" class="error-message">
+            This field is mandatory.
+          </div>
+          <div *ngIf="passwordModel?.errors?.minlength" class="error-message">
+            Pasword must have at least 10 characters.
+          </div>
+        </div>
+        <button type="submit">Register as Donor</button>
+      </form>
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      <div *ngIf="!errorMessage">Loading...</div>
+    </div>
+  </div>
+</body>

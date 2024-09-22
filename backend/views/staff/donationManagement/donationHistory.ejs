@@ -1,0 +1,60 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style_employeePage.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/donations.css">
+</head>
+
+<%- include('../../layouts/partials/Staff/StaffMenu.ejs') %>
+
+<section id=" interface ">
+
+    <h3 class="interface-name">Donations</h3>
+    <div class="overall-container">
+
+        <br>
+        <ul class="donations">
+            <hr>
+            <br>
+            <% if(donations.length > 0) { %>
+                <ul>
+                    <% donations.forEach(item => { %>
+                        <li>
+                            <% if (item.donor && item.donor.email) { %>
+                                Donor Contact: <%= item.donor.email %>
+                            <% } else { %>
+                                Donor Contact: N/A
+                            <% } %>
+                        </li>
+                        <li>
+                            <% if (item.location && item.location.name) { %>
+                                Location: <%= item.location.name %>
+                            <% } else { %>
+                                Location: N/A
+                            <% } %>
+                        </li>
+                        <li>
+                            Quantity: <%= item.quantity %>
+                        </li>
+                        <li>
+                            Date: <%= item.date %>
+                        </li>
+                        <li>
+                            Quality: <%= item.quality %>
+                        </li>
+                        <li>
+                            <% if (item.institution && item.institution.name) { %>
+                                Institution: <%= item.institution.name %>
+                            <% } else { %>
+                                Institution: N/A
+                            <% } %>
+                        </li>
+                        <hr><br>
+                    <% }); %>
+                </ul>
+            <% } else { %>
+                <p>No donations</p>
+            <% } %>
+            
+    </div>
+
+
+</section>

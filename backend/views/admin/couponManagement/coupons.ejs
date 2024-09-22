@@ -1,0 +1,42 @@
+<head>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/manageClientAccounts.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/ManagePointsPage.css">
+    </head>
+</head>
+
+<%-include("../../layouts/partials/Admin/AdminMenu.ejs")%>
+    <section id=" interface ">
+
+        <h3 class="interface-name">Create a new Coupon</h3>
+
+        <div class="form">
+            <form class="form" action="/admin/manage-rewards/coupons" method="post">
+                <div class="form-group">
+                    
+                    <div class="input-div">
+                        <label for="value"> Value </label>
+                        <input type="number" name="value" id="value" required>
+                    </div>
+
+                    <div class="input-div">
+                        <label for="cost"> Cost (in points) </label>
+                        <input type="number" name="cost" id="cost" required>
+                
+                    </div>
+
+                    <div class="input-div">
+                        <label for="sponsor"> Sponsor </label>
+                        <input type="sponsor" name="sponsor" id="sponsor" required>
+                    </div>
+                </div>
+                <p><%- include('../../../layouts/partials/errorMessage.ejs') %></p>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+
+    </section>
+
+

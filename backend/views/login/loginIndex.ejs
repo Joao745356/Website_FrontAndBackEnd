@@ -1,0 +1,38 @@
+<head>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="stylesheets/login_page_style.css">
+</head>
+
+
+<div class="wrapper">
+  <form action="/login" method="post">
+    <h1>login</h1>
+    <div class="input-box">
+      <input type="text" name="email" placeholder="Username" required>
+      <i class='bx bxs-user'></i>
+    </div>
+    <div class="input-box" id="password-box">
+      <input type="password" name="password" placeholder="Password" required>
+      <i class='bx bx-lock-alt'></i>
+
+      <span id="error">
+        <% if (messages.error) { %>
+          <%= messages.error %>
+            <% } %>
+      </span>
+
+    </div>
+    <button type="submit" class="button">Login</button>
+  </form>
+
+
+
+
+        <div class="remember-forgot">
+          <label><input type="checkbox"> <span style="margin-left: 2px;">Remember me</span></label>
+          <a href="#">Forgot password?</a>
+        </div>
+
+
+
+</div>

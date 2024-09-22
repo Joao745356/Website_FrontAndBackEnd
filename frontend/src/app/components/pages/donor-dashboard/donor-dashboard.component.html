@@ -1,0 +1,60 @@
+<div id="container">
+  <div id="menu">
+    <div id="logo">
+      <h2>Hello, {{ donor.name }}!</h2>
+    </div>
+
+    <div class="items">
+      <ul>
+        <li>
+          <i class="fa-solid fa-seedling"></i>
+          <a routerLink="/makeDonationRequest"> Make new Donation Request </a>
+        </li>
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <a routerLink="/donor/donation-history">
+            Check Your Donation History
+          </a>
+        </li>
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <a routerLink="/donor/donation-requests">
+            Check Your Donation Requests
+          </a>
+        </li>
+        <li>
+          <i class="fa-solid fa-ticket-simple"></i>
+          <a routerLink="/coupon-store"> Exchange points for coupons!</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <section id=" interface ">
+    <h3 class="interface-name">Homepage</h3>
+
+    <div class="values">
+      <div class="val-box">
+        <i class="fa-solid fa-user"></i>
+        <div>
+          <h3>{{ donor.pointsEarned }}</h3>
+          <!-- -->
+          <span>Total Points</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="paypal-container">
+      <p class="paypal-text">Remember, you can always donate through PayPal!</p>
+      <div #PaymentRef></div>
+      </div>
+      
+  </section>
+</div>
+
+<ng-template #loadingOrError>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+  <div *ngIf="!errorMessage">Loading...</div>
+</ng-template>

@@ -1,0 +1,29 @@
+<div class="main-container">
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+  
+    <div class="table-container">
+      <div id="itemTable" *ngIf="filteredCollectionPoints && filteredCollectionPoints.length > 0">
+        <input type="text" placeholder="Search for a collection point" (input)="onSearch($event)">
+        <table>
+          <thead>
+            <tr>
+              <th>Collection Points</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let location of filteredCollectionPoints">
+              <td>{{ location.name }}</td>
+              <td>
+                <button (click)="centerMapOnPoint(location)">See on Map</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>Tip: You can click on the collection point to see how many donations have been processed there!</p>
+    </div>
+  </div>
+  

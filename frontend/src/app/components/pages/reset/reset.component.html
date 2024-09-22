@@ -1,0 +1,15 @@
+<form [formGroup]="ResetForm">
+    <span class="b">Pretty please give weak password, the server can't hold much... </span>
+    
+    <label for="password" >Password:</label>
+    <input id="text" type="password" formControlName="password" required>
+    <span *ngIf="ResetForm.hasError('required', 'password') && ResetForm.controls['password'].dirty" class="error-message">Password is required.</span>
+    
+    <label for="password-confirm" >Please confirm your password: </label>
+    <input id="password-confirm" type="password" formControlName="confirmPassword">
+    <span *ngIf="ResetForm.hasError('required', 'confirmPassword') && ResetForm.controls['confirmPassword'].dirty">Confirm Password is required.</span>
+    <span *ngIf="ResetForm.hasError('passwordMismatch') && ResetForm.controls['confirmPassword'].dirty">Passwords do not match.</span>
+    
+    <button (click)="reset()" [disabled]="ResetForm.invalid" [class.disabled]="ResetForm.invalid">Submit</button>
+  </form>
+  

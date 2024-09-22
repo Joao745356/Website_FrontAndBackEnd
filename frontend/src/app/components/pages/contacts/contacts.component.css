@@ -1,0 +1,46 @@
+
+  
+  body {
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(52, 64, 68);
+     overflow: hidden; /* Prevent scrolling */
+  }
+  
+  
+  .white-box {
+    padding: 20px;
+    margin: 200px 0; /* Adjust the margin to move the box to the left */
+    max-width: 100%; /* Adjust as needed */
+    display: flex;
+    justify-content: center; /* Align items to the start horizontally */
+    align-items: center; /* Center items vertically */
+    border-radius: 20px; /* Set the border radius for rounded corners */
+  }
+  
+  
+  
+  .purpose-statement {
+    display: inline-block;
+    width: 580px;                                                                    /* Adjusts the width of element */
+    height: 400px;                                                                  /* Adjust the height of the element */
+    border-radius: 10px;                                                            /* Adjust the value to change the roundness */
+    background-color: #344850;                                                     
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.315);                                      /*Adds shadow for depth */
+    padding: 20px;                                                                  /* Optional: Add padding inside the box */
+  }
+  
+  .purpose-statement h2 {
+    display: inline-block;
+    font-size: 240%;
+    color: #A9CC93;
+    margin-bottom: 50px; /* Add vertical space between h2 and p */
+    margin-left: 10rem;
+  }
+  
+  .purpose-statement h3 {
+    font-size: 110%;
+    color: #A9CC93;
+    margin-bottom: 8%;
+  }
+  

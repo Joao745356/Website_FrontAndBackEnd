@@ -1,0 +1,86 @@
+<div class="page-container">
+  <form (ngSubmit)="onSubmit()" class="form-container">
+    <div class="selection">
+      <label>Institution</label>
+      <select name="institution" [(ngModel)]="institution">
+        <option *ngFor="let partner of partners" [ngValue]="partner">
+          {{ partner.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="selection">
+      <label>Location</label>
+      <select name="location" [(ngModel)]="location">
+        <option
+          *ngFor="let collectionPoint of collectionPoints"
+          [ngValue]="collectionPoint._id"
+        >
+          {{ collectionPoint.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="selection">
+      <label for="quality">Quality</label>
+      <select name="quality" [(ngModel)]="quality">
+        <option value="Excellent">Excellent</option>
+        <option value="Good">Good</option>
+        <option value="Fair">Fair</option>
+        <option value="Poor">Poor</option>
+      </select>
+    </div>
+
+    <div class="input">
+      <label for="quantity">Quantity (in KGs)</label>
+      <input
+        type="number"
+        name="quantity"
+        id="quantity"
+        required
+        [(ngModel)]="quantity"
+        min="1"
+        max="100"
+        ngModel name="quantity"
+        #quantityModel="ngModel"
+      />
+      <div *ngIf="quantityModel.touched && quantityModel?.errors?.required" class="error-message">
+        This field is required.
+      </div>
+      <div *ngIf="quantityModel.touched && quantityModel?.errors?.min" class="error-message">
+        The minimum quantity is 1kg.
+      </div>
+      <div *ngIf="quantityModel.touched && quantityModel?.errors?.max" class="error-message">
+        The maximum quantity is 100kg.
+      </div>
+    </div>
+
+    <div class="input">
+      <label for="date">Donation Date</label>
+      <input
+        type="date"
+        name="date"
+        id="date"
+        required
+        [(ngModel)]="dateToCollect"
+        ngModel name="date"
+        #date="ngModel"
+        [ngModel]="dateToCollect"
+        [ngModelOptions]="{ updateOn: 'blur' }"
+        appDateNotBeforeToday
+      />
+      <div *ngIf="date?.errors?.required">
+        This field is mandatory.
+      </div>
+      <div *ngIf="date?.errors?.dateNotBeforeToday">
+        The date cannot be before today.
+      </div>
+    </div>
+
+    <button type="submit">Register</button>
+  </form>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+</div>

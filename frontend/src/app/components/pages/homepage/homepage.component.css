@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(52, 64, 68);
+     overflow: hidden; /* Prevent scrolling */
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(52, 64, 68);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+  }
+  
+  .main_header li,
+  a,
+  button {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 500;
+    font-size: 20px;
+    color: #A9CC93;
+    text-decoration: none;
+    border: none;
+  }
+  
+  .logo {
+    cursor: none;
+    width: 60px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    background-color: transparent;
+  }
+  
+  .nav_links li {
+    display: inline-flex;
+    padding: 20px 20px;
+  }
+  
+  .nav_links li a {
+    transition: all 0.3s ease 0s;
+    color: #A9CC93;
+    text-decoration: none;
+    padding-left: 45px;
+  }
+  
+  .nav_links li a:hover {
+    color: #0088a9;
+  }
+  
+  button {
+    padding: 9px 25px;
+    background-color: #103232; /* corrected color value */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+  }
+  
+  button:hover {
+    background-color: rgba(0, 139, 169, 0.8); /* corrected color value */
+  }
+  
+  
+  .white-box {
+    padding: 20px;
+    margin: 200px 0; /* Adjust the margin to move the box to the left */
+    max-width: 100%; /* Adjust as needed */
+    display: flex;
+    justify-content: left; /* Align items to the start horizontally */
+    align-items: center; /* Center items vertically */
+    border-radius: 20px; /* Set the border radius for rounded corners */
+  }
+  
+  .white-box img {
+    max-width: 70%; /* Ensure the image does not exceed the box width */
+    height: 400px; /* Adjust the height as needed */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire space */
+    margin-right: 20px; /* Add some spacing between the image and box edge */
+    margin-left: 90px; /* Move the image 90px to the right */
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.312);  
+    border-radius: 20px; /* Apply rounded corners to the image */
+  }
+  
+  .purpose-statement {
+    display: inline-block;
+    width: 580px;                                                                    /* Adjusts the width of element */
+    height: 400px;                                                                  /* Adjust the height of the element */
+    border-radius: 10px;                                                            /* Adjust the value to change the roundness */
+    background-color: #344850;                                                     
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.315);                                      /*Adds shadow for depth */
+    padding: 20px;                                                                  /* Optional: Add padding inside the box */
+    margin-left: 50px;                                                              /* Move the image 90px to the right */ 
+  }
+  
+  .purpose-statement h2 {
+    display: inline-block;
+    font-size: 240%;
+    color: #A9CC93;
+    margin-bottom: 50px; /* Add vertical space between h2 and p */
+  }
+  
+  .purpose-statement p {
+    font-size: 80%;
+    color: #A9CC93;
+  }
+  
+  
+  
+  
+  #footer_container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(52, 64, 68); /* Set the background color here */
+  }
+  
+  .footer_container {
+    width: 100%;
+    padding: 30px 30px 20px;
+  }
+  
+  .social_icons {
+    display: flex;
+    justify-content: right;
+  }
+  
+  .social_icons a {
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 20%;
+  }
+  
+  .social_icons a i {
+    font-size: 2em;
+    color: #A9CC93;
+    opacity: 0.8;
+  }

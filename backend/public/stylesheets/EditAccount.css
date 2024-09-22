@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+
+
+
+
+
+/* Styling for the body */
+body {
+    display: flex;
+    width: 100%; /* Full width */
+    background: rgb(52, 64, 68); /* Gray background */
+    position: relative; /* Position relative */
+}
+
+
+
+
+
+/* Styling for the menu section */
+#menu {
+    display: flexbox;
+    background: #51707c; /* Light blue background */
+    width: 360px; /* Width of 300 pixels */
+    height: 550px; /* Full height */
+    margin-bottom: 16rem;
+    margin-left: 95px; /* Move 100 pixels to the right */
+}
+
+#menu #logo a { 
+    text-decoration: none; /* anchors stop being underlined */
+    color: black; /* color of the letters */
+    font-weight: 300; /* weight of the letters */
+    transition: 0.3s ease;
+}
+
+/* Styling for the logo */
+#menu #logo img {
+    width: 60px; /* Width of the logo image */
+    margin-right: 15px; /* Right margin of the logo */
+}
+
+/* Styling for the logo container */
+#menu #logo {
+    display: flex; /* Flex display */
+    align-items: center; /* Center align items vertically */
+    color: #cd6a6a; /* Text color */
+    padding: 20px 15px 20px; /* Padding */
+}
+
+/* Styling for the menu items */
+#menu .items {
+    margin-top: 40px; /* Top margin for menu items */
+}
+
+/* Styling for the menu item list */
+#menu .items li {
+    list-style: none; /* Remove default list style */
+    padding: 15px 0; /* Padding for each menu item */
+    transition: 0.3s ease;
+}
+
+#menu .items li:hover {
+    background: rgba(137, 231, 195, 0.725);
+    cursor: pointer;
+} 
+
+
+#menu .items li:hover i, 
+#menu .items li:hover a {
+color:#FFF;
+} 
+
+/* Styling for the icon inside menu items */
+#menu .items li i {
+    color: rgb(27, 27, 27); /* Icon color */
+    width: 30px; /* Width of the icon */
+    height: 20px; /* Height of the icon */
+    line-height: 60px; /* Line height */
+    text-align: center; /* Center align text */
+    font-size: 14px; /* Font size */
+    margin : 0 10px 0 15px; /* Margin around the icon */
+}
+
+/* Styling for the dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Styling for the dropdown button */
+.dropbtn {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bolder;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Styling for the dropdown content */
+.dropdown-content {
+    display: none;
+    position:absolute;
+    background-color: rgba(137, 231, 195, 1);
+    width: 100%; /* Set width to 100% */
+    border-radius: 5px;
+}
+
+/* Styling for dropdown links */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Hover effect for dropdown links */
+.dropdown-content a:hover {
+    background-color: #5961c2;
+}
+
+/* Show dropdown content when hovering over dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Targets the anchor element inside the list element*/
+#menu .items li  a { 
+    text-decoration: none; /* anchors stop being under  lined*/
+    color: black;/* color of the letter*/
+    font-weight: 300px;/* weight of the letters*/
+    transition: 0.3s ease;
+}
+
+.interface-name {
+    margin-left: 30px;
+    margin-top: 10px;
+    color:#A9CC93;
+    padding:30px 30px 0 30px;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+
+
+
+
+.form {
+    font-family: 'Roboto Mono', monospace;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 300px;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button[class="submit-edit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #5c95ab;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[class="submit-edit"]:hover {
+    background-color: #41738a;
+}
+
+
+
+

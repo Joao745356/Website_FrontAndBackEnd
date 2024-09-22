@@ -1,0 +1,182 @@
+/* Importing the Roboto Mono font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+#interface{
+    margin-left: 60px;
+}
+/* Resetting default margin, padding, box-sizing, and setting font-family for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace; /* Specify a fallback font-family */
+}
+
+/* Styling for the body */
+body {
+    display: flex;
+    width: 100%; /* Full width */
+    background: rgb(52, 64, 68); /* Gray background */
+    position: relative; /* Position relative */
+    margin-top: 40px;
+}
+
+
+
+/* Styling for the menu section */
+#menu {
+    display: flexbox;
+    background: #51707c; /* Light blue background */
+    width: 360px; /* Width of 300 pixels */
+    height: 50rem; /* Full height */
+    margin-left: 95px; /* Move 100 pixels to the right */
+    margin-top: 90px;
+    border-radius: 10px;
+}
+
+#menu #logo a { 
+    text-decoration: none; /* anchors stop being underlined */
+    color: black; /* color of the letters */
+    font-weight: 300; /* weight of the letters */
+    transition: 0.3s ease;
+}
+
+/* Styling for the logo */
+#menu #logo img {
+    width: 60px; /* Width of the logo image */
+    margin-right: 15px; /* Right margin of the logo */
+}
+
+/* Styling for the logo container */
+#menu #logo {
+    display: flex; /* Flex display */
+    align-items: center; /* Center align items vertically */
+    color: #cd6a6a; /* Text color */
+    padding: 10% 15% 5%; /* Padding */
+}
+
+/* Styling for the menu items */
+#menu .items {
+    margin-top: 10%; /* Top margin for menu items */
+}
+
+/* Styling for the menu item list */
+#menu .items li {
+    list-style: none; /* Remove default list style */
+    padding: 4% 0; /* Padding for each menu item */
+    transition: 0.3s ease;
+}
+
+#menu .items li:hover {
+    background: rgba(137, 231, 195, 0.725);
+    cursor: pointer;
+} 
+
+
+#menu .items li:hover i, 
+#menu .items li:hover a {
+color:#FFF;
+} 
+
+/* Styling for the icon inside menu items */
+#menu .items li i {
+    color: rgb(27, 27, 27); /* Icon color */
+    width: 8%; /* Width of the icon */
+    height: 10%; /* Height of the icon */
+    line-height: 30%; /* Line height */
+    text-align: center; /* Center align text */
+    font-size: 14px; /* Font size */
+    margin : 0 2% 0 5%; /* Margin around the icon */
+}
+
+/* Styling for the dropdown */
+.dropdown {
+    position:relative ;
+    display: inline-block;
+}
+
+/* Styling for the dropdown button */
+.dropbtn {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bolder;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Styling for the dropdown content */
+.dropdown-content {
+    display: none;
+    position:absolute;
+    background-color: rgba(137, 231, 195, 1);
+    width: 100%; /* Set width to 100% */
+    border-radius: 5px;
+}
+
+/* Styling for dropdown links */
+.dropdown-content a {
+    color: black;
+    padding: 12% 16%;
+    text-decoration: none;
+    display: block;
+}
+
+/* Hover effect for dropdown links */
+.dropdown-content a:hover {
+    background-color: #5961c2;
+}
+
+/* Show dropdown content when hovering over dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Targets the anchor element inside the list element*/
+#menu .items li  a { 
+    text-decoration: none; /* anchors stop being under  lined*/
+    color: black;/* color of the letter*/
+    font-weight: 300px;/* weight of the letters*/
+    transition: 0.3s ease;
+}
+
+.interface-name {
+    margin-left: 30px;
+    margin-top: 9   0px;
+    color:#A9CC93;
+    padding:30px 30px 0 30px;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.values {
+    color: rgb(0, 0, 0);
+    padding:30px 30px 0px 30px;
+}
+
+.values {
+    padding: 30px 30px 30px 30px;
+    margin-bottom: 300px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.values span {
+    font-size: 14px;
+}
+
+.values .val-box {
+    background: #51707c;
+    width: 235px;
+    height: 100%;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin: 0 30px; /* Add margin to create space between val-box elements */
+    justify-content: flex-start;
+    align-items: center;
+}
+

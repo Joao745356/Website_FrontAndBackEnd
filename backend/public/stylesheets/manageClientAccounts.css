@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+
+
+#interface .manage-staff-interface h3 {
+    font: 'Roboto mono', monospace;
+    margin-left: -30px ;
+    margin-top: 55px;
+}
+
+
+#interface .manage-staff-interface a {
+    padding-top: 30px;
+    font: 'Roboto mono', monospace;
+}
+
+#interface .manage-staff-interface form label{
+    margin-right: 5px;
+    font: 'Roboto mono', monospace;
+    color:#A9CC93;
+}
+
+#interface .manage-staff-interface form input{
+    border-radius: 5px;
+}
+
+#interface .manage-staff-interface form button{
+    font-family: 'Roboto Mono', monospace;
+    background-color: #003366b3;
+    padding: 6px 12px;
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Add transition for clicking animation */
+    font-size: 14px;
+    margin-right: 2px; 
+    margin-bottom: 2px; 
+}
+
+.scrollable-table{
+    max-height: 300px; /* Set max height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.table {
+    font-family: 'Roboto Mono', monospace;
+    margin-left: 0;
+    border-collapse:collapse;
+    font-size: 14px;
+    width: 50rem;
+    max-height: 40rem; /* Set max height for scrolling */
+    border-radius: 20px; /* Add border radius */
+}
+
+.table th { 
+    text-align: left;
+    background-color: #5c95ab; /* Background color for header */
+}
+
+.table td {
+    padding: 6px 8px;
+    font-weight: normal;
+}
+
+.table tbody tr:nth-of-type(odd){
+    background-color: #ffffff; /* Set background color for odd rows to white */
+}
+
+.table tbody tr:nth-of-type(even){
+    background-color: #dddddd; /* Set background color for even rows to gray */
+}
+
+.table tbody button {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #003366;
+    padding: 6px 12px;
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Add transition for clicking animation */
+    font-size: 12px;
+    margin-right: 2px; 
+    margin-bottom: 2px; 
+}
+
+.table tbody button:hover {
+    background-color: #003366ae; /* Change background color on hover */
+}
+

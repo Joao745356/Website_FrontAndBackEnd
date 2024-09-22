@@ -1,0 +1,32 @@
+
+<head>
+    <link rel="stylesheet"  type="text/css"  href="/stylesheets/AdminPageStyle.css">
+    <link rel="stylesheet"  type="text/css"  href="/stylesheets/EditAccount.css">
+  </head>
+
+  <%-include('../../layouts/partials/Admin/AdminMenu.ejs')%>
+
+  <section id = " interface ">
+  
+    <h3 class="interface-name">Register new collection point</h3>
+  
+    <div class="form">
+        <form class="form" action="/admin/manage-collectionPoints/create" method="post">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+    </div>
+    <div class="form-group">
+        <label for="latitude">Latitude</label>
+        <input type="number" name="lat" id="email" step="any" required>
+    </div>
+    <div class="form-group">
+        <label for="longitude">Longitude</label>
+        <input type="number" name="long" id="password" step="any" required>
+    </div>
+        <button type="submit">Submit</button>
+  </form>
+    </div>
+       
+  
+  </section>

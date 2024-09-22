@@ -1,0 +1,43 @@
+<html lang="en">
+
+<body>
+    <div class="page-container">
+        <div id="itemTable" *ngIf="donations && donations.length > 0">
+            <h1 class="text-center">Donations History</h1>
+            <table>
+                <tr>
+                    <th>Institution</th>
+                    <th>Location</th>
+                    <th>Quantity</th>
+                    <th>Quality</th>
+                    <th>Points Awarded</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+                <tr *ngFor="let donation of donations">
+                    <td>{{ donation?.institution?.name || 'N/A'}}</td>
+                    <td>{{ donation?.location?.name || 'N/A' }}</td>
+                    <td>{{ donation?.quantity || 'N/A'}}</td>
+                    <td>{{ donation?.quality || 'N/A'}}</td>
+                    <td>{{ donation?.pointsAwarded }}</td>
+                    <td>{{ donation.date | date : 'shortDate' || 'N/A' }}</td>
+                    <td>
+                        <button (click)="viewDetails(donation._id)">View Details</button>
+                    </td>
+                </tr>
+            </table>
+            <button class="donation-request">Make a donation request!</button>
+        </div>
+        <div *ngIf="!donations || donations.length === 0">
+            <p class="text-center">No donations available.</p>
+            <button class="donation-request" routerLink="/makeDonationRequest">Make a donation request!</button>
+        </div>
+        <ng-template #loadingOrError>
+            <div *ngIf="errorMessage" class="error-message">
+                {{ errorMessage }}
+            </div>
+            <div *ngIf="!errorMessage">Loading...</div>
+        </ng-template>
+    </div>
+</body>
+</html>

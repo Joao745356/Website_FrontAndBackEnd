@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(52, 64, 68);
+  overflow: hidden; /* Prevent scrolling */
+  width: 100%;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(52, 64, 68);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 7%;
+  border: none;
+}
+
+.main_header li,
+a,
+button {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 500;
+  font-size: 20px;
+  color: #a9cc93;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.logo {
+  cursor: pointer;
+  width: 60px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  background-color: transparent;
+}
+
+.nav_links li {
+  display: inline-flex;
+  padding: 20px 20px;
+}
+
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+  color: #a9cc93;
+  text-decoration: none;
+  padding-left: 45px;
+}
+
+.nav_links li a:hover {
+  color: #0088a9;
+}
+
+button {
+  padding: 9px 25px;
+  background-color: #103232; /* corrected color value */
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: rgba(0, 139, 169, 0.8); /* corrected color value */
+}

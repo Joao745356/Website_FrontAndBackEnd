@@ -1,0 +1,42 @@
+
+
+<head>
+    <link rel="stylesheet"  type="text/css"  href="/stylesheets/AdminPageStyle.css">
+    <link rel="stylesheet"  type="text/css"  href="/stylesheets/EditAccount.css">
+  </head>
+  
+  <%-include('../../../layouts/partials/Admin/AdminMenu.ejs')%>
+
+  <section id = " interface ">
+  
+    <h3 class="interface-name">Register New Partner</h3>
+  
+    <div class="form">
+        <form class="form" action="/admin/manage-accounts/register/registerPartner" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="name">Institution Name:</label>
+        <input type="text" name="name" required>    
+    </div>
+    <div class="form-group">
+        <label for="email">Institution Email:</label>
+        <input type="email" name="email" required>    
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>    
+    </div>
+    <div class="form-group">
+        <label for="description">Institution Description:</label>
+        <textarea name="description" required></textarea>   
+    </div>
+    <div class="form-group">
+        <label for="image">Append Image </label>
+        <input type="file" name="image" required >    
+    </div>
+    <p><%- include('../../../layouts/partials/errorMessage.ejs') %></p>
+        <button type="submit">Submit</button>
+  </form>
+    </div>
+       
+  
+  </section>

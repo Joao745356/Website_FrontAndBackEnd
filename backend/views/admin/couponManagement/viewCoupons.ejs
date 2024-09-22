@@ -1,0 +1,46 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/manageClientAccounts.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/AdminPageStyle.css">
+</head>
+
+<%-include('../../layouts/partials/Admin/AdminMenu.ejs')%> 
+
+<div id="interface">
+    <div class="manage-staff-interface">
+        <h3 class="interface-name" style="margin-bottom: 8px;">Manage Coupons</h3>
+        <a href="/admin/manage-rewards/coupons"  >Create Coupon</a>
+
+    </div>
+    <div class="scrollable-table">
+        <table class="table">
+            <% if (coupons.length > 0) { %>
+            <thead>
+                <tr>
+                    <th>Sponsor</th>
+                    <th>Value</th>
+                    <th>Cost</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% coupons.forEach(item=> { %>
+                    <tr>
+                        <td>
+                            <%= item.sponsor %>
+                        </td>
+                        <td>
+                            <%= item.value %>
+                        </td>
+                        <td>
+                            <%= item.cost %>
+                        </td>
+                        <% }) %>
+                    </tr>
+            </tbody>
+        </table>
+        <% } else { %>
+            <p>No data available</p>
+        <% } %>
+    </div>
+
+</div>

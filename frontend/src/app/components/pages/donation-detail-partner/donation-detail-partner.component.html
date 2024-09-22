@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="don" *ngIf="donation">
+    <h1>Donation Details</h1>
+    <p><strong>Donator:</strong> {{ donation.donor.email }}</p>
+    <p><strong>Institution:</strong> {{ donation.institution.name }}</p>
+    <p><strong>Location:</strong> {{ donation.location.name }}</p>
+    <p><strong>Quantity:</strong> {{ donation.quantity }}</p>
+    <p><strong>Quality:</strong> {{ donation.quality }}</p>
+    <p><strong>Points Awarded:</strong> {{ donation.pointsAwarded }}</p>
+    <p><strong>Date:</strong> {{ donation.date | date : "fullDate" }}</p>
+    <p><strong>State:</strong> {{ donation.state }}</p>
+    <!-- <img *ngIf="donation.imageName" [src]="'/path-to-images/' + donation.imageName" alt="Donation Image"> -->
+
+    <button (click)="editState(State.Waiting)">Mark as Waiting</button>
+    <button (click)="editState(State.Sent)">Mark as Sent</button>
+    <button (click)="editState(State.Received)">Mark as Received</button>
+    <button (click)="editState(State.Forwarded)">Mark as Forwarded</button>
+  </div>
+
+  <ng-template #loadingOrError>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="!errorMessage">Loading...</div>
+  </ng-template>
+</div>

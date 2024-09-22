@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="don" *ngIf="donation">
+    <h1>Request Details</h1>
+    <p><strong>Institution:</strong> {{ donation.institution.name }}</p>
+    <p><strong>Location:</strong> {{ donation.location.name }}</p>
+    <p><strong>Quantity:</strong> {{ donation.quantity }}</p>
+    <p><strong>Quality:</strong> {{ donation.quality }}</p>
+    <p><strong>Date Appointed:</strong> {{ donation.dateToCollect| date: 'fullDate' }}</p>
+    <p><strong>State:</strong> {{ donation.state }}</p>
+    <!-- <img *ngIf="donation.imageName" [src]="'/path-to-images/' + donation.imageName" alt="Donation Image"> -->
+  </div>
+
+  <ng-template #loadingOrError>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="!errorMessage">Loading...</div>
+  </ng-template>
+</div>

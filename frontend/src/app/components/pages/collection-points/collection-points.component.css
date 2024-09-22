@@ -1,0 +1,96 @@
+
+
+.main-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Prevents page scrolling */
+    background-color: rgb(52, 64, 68);
+  }
+  
+  /* Map container styling */
+  .map-container{
+    height: 30rem;
+    width: 45rem;
+    margin: 8rem;
+}
+
+#map{
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+}
+  
+  /* Table container styling */
+  .table-container {
+    flex: 0 0 40%; /* Fixed width for the table container */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem; /* Adjust as needed */
+    overflow-y: auto; /* Make only the table container scrollable */
+    margin: 10rem;
+  }
+  
+  /* Table styling */
+  #itemTable {
+    width: 100%;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 2px 15px rgba(64, 64, 64, .7);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  td, th {
+    padding: 15px 20px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #42706a;
+    color: #fafafa;
+    font-weight: 200;
+    text-transform: uppercase;
+  }
+  
+  tr {
+    background-color: #fafafa;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #eeeeee;
+  }
+  
+  button {
+    padding: 1rem;
+    border-radius: 5rem;
+    border: none;
+    color: white;
+    background-color: #42706a;
+    opacity: 0.8;
+  }
+  
+  button:hover {
+    cursor: pointer;
+    opacity: 100%;
+  }
+  
+  input[type="text"] {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  p{
+    color: #A9CC93;
+    font-size: 1em;
+    align-self: right;
+    margin: .3rem;
+  }

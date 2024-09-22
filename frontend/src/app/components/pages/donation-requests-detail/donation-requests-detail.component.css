@@ -1,0 +1,37 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  color: #a9cc93;
+}
+
+.don {
+  display: flex;
+  flex-direction: column;
+  background-color: #344850;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.315);
+  margin: 1.5rem;
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  width: 30rem;
+}
+
+h1 {
+  display: inline-block;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+}
